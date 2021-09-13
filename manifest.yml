@@ -1,0 +1,50 @@
+modules:
+  jira:issuePanel:
+    - key: test-react-hello-world-panel
+      resource: main
+      resolver:
+        function: resolver
+      viewportSize: medium
+      title: Image Repository
+      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main
+    path: static/hello-world/build
+app:
+  id: ari:cloud:ecosystem::app/ad847f80-e552-41d9-aac3-d13c360890ed
+  name: Image Repository
+
+permissions:
+  scopes:
+    - 'write:confluence-content'
+    - 'storage:app'
+  content:
+    styles:
+      - 'unsafe-inline'
+  external:
+    images:
+      - '*.giphy.com'
+      - '*.fontawesome.com'
+      - '*.pixabay.com'
+      - 'pixabay.com'
+    scripts:
+      - '*.jquery.com'
+      - '*.cloudflare.com'
+      - '*.bootstrapcdn.com'
+    
+    styles:
+      - '*.bootstrapcdn.com'
+      - '*.cloudflare.com'
+      - 'https://use.fontawesome.com/releases/v5.7.0/css/all.css'
+
+    fetch:
+      backend:
+        - '*.Prpixabay.com'
+      client:
+        - 'pixabay.com'
+    
+    fonts:
+      - '*.fontawesome.com'
